@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  mytapp:
+    image: mytapp:latest
+    container_name: mytapp_backend
+    build:
+      context: .
+    environment:
+      DB_HOST: db
+      DB_USERNAME: mytapp
+      DB_PASSWORD: mytapp
+      DB_DATABASE: mytapp
+      JWT_SECRET: secret_key
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    container_name: mytapp_postgres
+    environment:
+      POSTGRES_DB: mytapp
+      POSTGRES_PASSWORD: mytapp
+      POSTGRES_USER: mytapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:

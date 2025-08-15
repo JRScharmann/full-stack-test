@@ -1,38 +1,101 @@
-<p align="center">
-  <img width="260" src="https://raw.githubusercontent.com/myTapp/temos-vagas/master/logo_mytapp_primario.png?raw=true">
-</p>
+# Catálogo de Cervejas - Aplicação Full Stack
 
-## Teste full-stack developer (v1.2)
-O teste consiste em criar uma aplicação com Node.js e PostgreSQL que expõe uma API REST de um CRUD de usuário e uma aplicação web contendo uma interface para login e acesso a dados de uma API externa.
+Esta é uma aplicação full stack de um catálogo de cervejas com sistema de autenticação. A aplicação permite que usuários visualizem uma lista de cervejas após fazer login, com uma interface responsiva e moderna.
 
-Depois de logado o usuário da aplicação web deve poder acessar dados da [Punk API v2](https://punkapi.com/) - uma API aberta da cervejaria BrewDog.
+## Inicializando a Aplicação para Desenvolvimento
 
-### Back-end
-- Todos os endpoints de consulta de dados devem ter autenticação por webtoken ou similar
-- Fique a vontade para usar algum ORM de preferência ([sequelize](https://github.com/sequelize/sequelize), [typeorm](https://github.com/typeorm/typeorm), ...)
+Inicializando o Banco de Dados
+```sh
+docker compose up db -d
+```
 
-> O CRUD de usuários não necessita interface, coloque os endpoints disponíveis no README do projeto.
+Inicialize o Frontend
 
-### Front-end
-O front-end deve apresentar pelo menos os seguintes requisitos:
-  - Interface de login
-    - Feedbacks de usuário ou senha incorreta
-  - Listagem dos dados da Punk API v2
-  - Paginação dos dados
-  
-> Pode ser utilizado qualquer framework front-end, preprocessadores de css, task runners, bundlers, ... de sua preferência, mas nenhum deles é de uso obrigatório.
+```sh
+cd frontend && npm install && npm start
+```
 
-## Critérios de avaliação
-- Funcionamento do projeto
-- Estrutura do código
-- Uso de boas práticas
-- Cumprimento dos requisitos mínimos
+Aplicação rodando no http://localhost:3000
 
-## Deve ser entregue:
-- Um repositório git (fork deste)
-- Um README do projeto com o passo-a-passo para executar a aplicação.
-> Não se deve fazer o commit de pastas como `node_modules`, o projeto deve instalar suas dependências a partir do `package.json`
+Inicialize o Backend
 
-## Extras:
-- Build para produção
-- Docker file com todas dependências
+```sh
+cd backend && npm install && npm run dev
+```
+
+Aplicação rodando no http://localhost:3001/api/status
+
+### Inicializando a aplicação com Docker
+
+```sh
+docker compose up --build
+```
+
+## Visão Geral
+
+### Frontend
+
+O frontend é uma aplicação React moderna com Material-UI que oferece:
+
+- Interface responsiva e amigável
+- Sistema de autenticação completo
+- Catálogo de cervejas com cards informativos
+- Página 404 personalizada
+- Feedback visual para todas as ações
+
+Para mais detalhes sobre o frontend, incluindo scripts disponíveis e configurações, consulte o [README do Frontend](./frontend/README.md).
+
+### Backend
+
+O backend é uma API REST em Node.js que fornece um sistema completo de autenticação e endpoints protegidos para o catálogo de cervejas.
+
+Para documentação completa, incluindo:
+
+- Lista detalhada de tecnologias utilizadas
+- Documentação completa dos endpoints da API
+- Instruções de configuração e execução
+
+Consulte o [README do Backend](./backend/README.md).
+
+
+### Catálogo de Cervejas
+
+- Listagem paginada de cervejas
+- Exibição de detalhes como:
+  - Nome da cerveja
+  - Imagem
+  - Teor alcoólico (ABV)
+  - Descrição
+  - Tagline
+- Cards responsivos com layout adaptável
+- Tooltip para nomes longos e descrições completas
+
+### Interface
+
+- Design responsivo para diferentes tamanhos de tela
+- Página 404 personalizada para rotas não encontradas
+- Barra de navegação com estado de autenticação
+- Feedback visual para carregamento e erros
+- Grid centralizado com cards de tamanho uniforme
+
+## Estrutura do Projeto
+
+```
+/
+├── backend/
+│   ├── src/
+│   │   ├── entity/         # Entidades do TypeORM
+│   │   ├── routes/         # Rotas da API
+│   │   ├── data-source.js  # Configuração do banco de dados
+│   │   ├── middleware.js   # Middlewares da aplicação
+│   │   └── index.js        # Entrada da aplicação
+│   └── package.json
+│
+└── frontend/
+    ├── public/
+    └── src/
+        ├── components/     # Componentes React
+        ├── contexts/       # Contextos globais
+        ├── services/       # Serviços e APIs
+        └── App.js         # Componente principal
+```
