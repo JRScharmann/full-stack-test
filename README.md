@@ -57,6 +57,7 @@ Para documentação completa, incluindo:
 
 Consulte o [README do Backend](./backend/README.md).
 
+:warning: O Frontend está sendo servido pelo Backend após o build para simplificar a aplicação, em produção outras opções podem ser utilizadas
 
 ### Catálogo de Cervejas
 
