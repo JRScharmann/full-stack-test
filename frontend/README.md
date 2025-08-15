@@ -1,0 +1,34 @@
+## Tecnologias Utilizadas
+
+### Frontend
+
+- **React.js**: Framework JavaScript para construção da interface
+- **Material-UI (MUI)**: Biblioteca de componentes React
+- **React Router**: Gerenciamento de rotas no cliente
+- **Axios**: Cliente HTTP para comunicação com a API
+- **Context API**: Gerenciamento de estado global
+- **JWT Decode**: Decodificação de tokens JWT
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
