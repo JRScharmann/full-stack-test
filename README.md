@@ -84,13 +84,12 @@ Consulte o [README do Backend](./backend/README.md).
 ```
 /
 ├── backend/
-│   ├── src/
-│   │   ├── entity/         # Entidades do TypeORM
-│   │   ├── routes/         # Rotas da API
-│   │   ├── data-source.js  # Configuração do banco de dados
-│   │   ├── middleware.js   # Middlewares da aplicação
-│   │   └── index.js        # Entrada da aplicação
-│   └── package.json
+│   └── src/
+│       ├── entity/         # Entidades do TypeORM
+│       ├── routes/         # Rotas da API
+│       ├── data-source.js  # Configuração do banco de dados
+│       ├── middleware.js   # Middlewares da aplicação
+│       └── index.js        # Entrada da aplicação
 │
 └── frontend/
     ├── public/
@@ -98,5 +97,5 @@ Consulte o [README do Backend](./backend/README.md).
         ├── components/     # Componentes React
         ├── contexts/       # Contextos globais
         ├── services/       # Serviços e APIs
-        └── App.js         # Componente principal
+        └── App.js          # Componente principal
 ```
